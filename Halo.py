@@ -27,7 +27,7 @@ async def test(ctx, arg):
         return website_is_up
     def extract(user_name):
         if not urlValidity(user_name):
-            errorMsg = "Did you forget how to spell or something?? That's not even a real Xbox name"
+            errorMsg = "ERROR: Not A Valid Halo Username, please check you're spelling"
             return errorMsg
         else:
             rank = []
@@ -55,10 +55,10 @@ async def ban(ctx, member: discord.Member, *, reason = None):
     await ctx.send(f'Banned {member.mention}')
 @client.command()
 async def stop(ctx):
-    await ctx.send("I'm out of here! You can check your stats later I guess ¯\_(ツ)_/¯")
+    await ctx.send("I'm out of here! You can check your stats later¯\_(ツ)_/¯")
     await client.logout()
 # INSERT TOKEN 
-token ""
+token =""
 client.run(token)
 
 
