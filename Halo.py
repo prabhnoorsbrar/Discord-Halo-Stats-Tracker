@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 import asyncio
 import discord
 from discord.ext import commands
-
-
+import config
 client =commands.Bot(command_prefix= '!')
 
 @client.event
@@ -58,7 +57,7 @@ async def stop(ctx):
     await ctx.send("I'm out of here! You can check your stats later¯\_(ツ)_/¯")
     await client.logout()
 # INSERT TOKEN 
-token =""
+token = config.token
 client.run(token)
 
 
