@@ -57,6 +57,7 @@ async def stop(ctx):
     await ctx.send("I'm out of here! You can check your stats later¯\_(ツ)_/¯")
     await client.logout()
 # INSERT TOKEN 
+#MAKE SURE TOKEN IS IN A SEPERATE FILE AND IMPORT FILENAME ABOVE (FILENAME.TOKEN_VARIABLE_NAME)
 token = config.token
 client.run(token)
 
