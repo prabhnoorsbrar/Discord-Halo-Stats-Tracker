@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 import asyncio
 import discord
 from discord.ext import commands
-import config
+import json
 client =commands.Bot(command_prefix= '!')
+
 
 @client.event
 async def on_ready():
@@ -58,7 +59,10 @@ async def stop(ctx):
     await client.logout()
 # INSERT TOKEN 
 #MAKE SURE TOKEN IS IN A SEPERATE FILE AND IMPORT FILENAME ABOVE (FILENAME.TOKEN_VARIABLE_NAME)
-token = config.token
+f = open('config.json')
+data = json.load(f)
+token = data["token"]
+
 client.run(token)
 
 
