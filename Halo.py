@@ -37,7 +37,7 @@ async def test(ctx, arg):
             rankHalo = soup.find_all('div', attrs={"class","rating-entry__rank-info"})
             for j in range(len(rankHalo)):
                 rank.append(rankHalo[j].text)
-            return rank[0]
+            return (user_name+ "'s all time PEAK ranked play info is: "+rank[0])
     await ctx.send(extract(user_name))
 @client.command()
 async def botPing(ctx):
