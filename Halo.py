@@ -32,7 +32,7 @@ async def test(ctx, arg):
         else:
             rank = []
             url = "https://halotracker.com/halo-infinite/profile/xbl/"+user_name+"/overview"
-            page = r.get(url)
+            page = r.get(url,timeout=5)
             soup = BeautifulSoup(page.content, 'html.parser')
             rankHalo = soup.find_all('div', attrs={"class","rating-entry__rank-info"})
             for j in range(len(rankHalo)):
