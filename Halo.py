@@ -6,8 +6,10 @@ from discord import app_commands
 from discord.ext import commands
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-import json
-
+#ONLY IMPORT JSON IF STORING TOKEN IN JSON
+#import json
+#IMPORT TOKEN FROM ENV VAR
+import os
 intents = discord.Intents.all()
 client =commands.Bot(command_prefix= '!',intents=intents)
 
@@ -92,14 +94,16 @@ async def test(ctx, user_name):
 
 # INSERT TOKEN 
 #MAKE SURE TOKEN IS IN A SEPERATE FILE AND IMPORT FILENAME ABOVE (FILENAME.TOKEN_VARIABLE_NAME)
+"""""
+#USE BLOCK OF CODE IF LOADING TOKEN FROM JSON FILE
 f = open('config.json')
 data = json.load(f)
 token = data["token"]
 
 client.run(token)
+"""
 
-
-
+client.run(os.getenv("TOKEN"))
                
      
 
